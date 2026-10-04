@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ═══ SEO ═══ -->
+  <title>S.L. Express | Premium Logistics Since 1982</title>
+  <meta name="description" content="S.L. Express — India's trusted logistics partner since 1982. 58 branches, 194 associates, same-day and international delivery across 190+ countries. Based in Bengaluru.">
+  <meta name="keywords" content="logistics Bengaluru, logistics Chennai, express delivery India, logistics company South India, international packages, same day delivery Bengaluru, SL Express">
+  <meta name="author" content="S.L. Express">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://slexpress.in/">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://slexpress.in/">
+  <meta property="og:title"       content="S.L. Express | Premium Logistics Since 1982">
+  <meta property="og:description" content="58 branches. 194 associates. 190+ countries. India's express logistics network, built over four decades.">
+  <meta property="og:image"       content="https://slexpress.in/og-cover.jpg">
+  <meta property="og:locale"      content="en_IN">
+  <meta property="og:site_name"   content="S.L. Express">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="S.L. Express | Premium Logistics">
+  <meta name="twitter:description" content="India's express logistics network since 1982. Same-day, next-day, international.">
+  <meta name="twitter:image"       content="https://slexpress.in/og-cover.jpg">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"CourierService","name":"S.L. Express","url":"https://slexpress.in","logo":"https://slexpress.in/favicon.png","foundingDate":"1982","description":"Premium courier and logistics service with 58 branches and 194 associates across India.","areaServed":["India","International"],"address":{"@type":"PostalAddress","addressLocality":"Bengaluru","addressRegion":"Karnataka","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","contactType":"customer service","email":"info@slexpress.in","availableLanguage":["English","Kannada","Tamil","Hindi"]}}
+  </script>
+  <link href="assets/css/fonts.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="assets/css/fonts.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx-js-style@1.2.0/dist/xlsx.bundle.js"></script>
+  <script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="🤚">
+      <div class="👉"></div>
+      <div class="👉"></div>
+      <div class="👉"></div>
+      <div class="👉"></div>
+      <div class="🌴"></div>
+      <div class="👍"></div>
+    </div>
+    <p class="loader-label">Welcome to S.L. Express</p>
+  </div>
+
+  <!-- Progress bar -->
+  <div id="progress-bar"></div>
+
+  <!-- ClickSpark canvas -->
+  <canvas id="spark-canvas"></canvas>
+
+  <!-- Bloom overlay -->
+  <div id="bloom-overlay">
+    <canvas id="dot-field-canvas"></canvas>
+  </div>
+
+  <!-- Nav -->
+  <nav>
+    <a class="logo" href="#" id="logoHomeLink"><img src="sle-logo.png" alt="S.L. Express"></a>
+    <ul class="nav-links">
+      <li><a href="#page2" data-scroll-target="page2">Services</a></li>
+      <li><a href="#" id="navTrackLink">Track</a></li>
+      <li><a href="#last-section" data-scroll-target="last-section">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="quote-btn" id="bizEnquiryBtn">Business Enquiry</button>
+      <div class="admin-wrap" id="adminWrap">
+        <button class="admin-btn" id="adminBtn">
+          <span class="btn-label">Login</span>
+          <div class="truck-scene"><div class="truck-inner"><div class="truck-trail"><span></span><span></span><span></span></div><svg width="30" height="19" viewBox="0 0 36 22" fill="none"><rect x="18" y="4" width="14" height="13" rx="2" fill="#1a1a1a"/><rect x="24" y="6" width="6" height="6" rx="1" fill="#374151"/><rect x="2" y="6" width="18" height="11" rx="1.5" fill="#292524"/><circle cx="7" cy="18" r="3.5" fill="#1a1a1a" stroke="#4b5563" stroke-width="1.2"/><circle cx="7" cy="18" r="1.5" fill="#6b7280"/><circle cx="26" cy="18" r="3.5" fill="#1a1a1a" stroke="#4b5563" stroke-width="1.2"/><circle cx="26" cy="18" r="1.5" fill="#6b7280"/></svg></div></div>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile / tablet only: vertical CTA rail (replaces cramped nav buttons when space runs out) -->
+  <div class="mobile-cta-rail" id="mobileCtaRail">
+    <button class="rail-btn" id="railBizBtn"><span>Business Enquiry</span></button>
+    <button class="rail-btn rail-btn-flat" id="railLoginBtn"><span>Login</span></button>
+  </div>
+
+  <!-- STICKY GLOBE SECTION -->
+  <div id="scroll-driver">
+    <div id="globe-sticky">
+      <canvas id="aurora-canvas"></canvas>
+      <canvas id="globe-canvas"></canvas>
+
+      <!-- Hero text -->
+      <div id="hero-text">
+        <p class="eyebrow">Domestic &amp; International Logistics · Since 1982</p>
+        <h1><span class="hero-line-1">Moving the World with</span><br><span class="hero-underline-gold">Borderless Logistics</span></h1>
+        <p>Domestic delivery, international freight, and every shipment need fulfilled.</p>
+        <div id="trackBtnWrap" style="display:inline-block; pointer-events:all;">
+          <button class="cta-btn" id="trackBtn">
+            <span class="btn-label">Track Shipment</span>
+            <div class="truck-scene"><div class="truck-inner"><div class="truck-trail"><span></span><span></span><span></span></div><svg width="30" height="19" viewBox="0 0 36 22" fill="none"><rect x="18" y="4" width="14" height="13" rx="2" fill="#251c18"/><rect x="24" y="6" width="6" height="6" rx="1" fill="#3d2e28"/><rect x="2" y="6" width="18" height="11" rx="1.5" fill="#1a1410"/><circle cx="7" cy="18" r="3.5" fill="#251c18" stroke="#5c4a3a" stroke-width="1.2"/><circle cx="7" cy="18" r="1.5" fill="#8a7560"/><circle cx="26" cy="18" r="3.5" fill="#251c18" stroke="#5c4a3a" stroke-width="1.2"/><circle cx="26" cy="18" r="1.5" fill="#8a7560"/></svg></div></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Scroll hint -->
+      <div id="scroll-hint">
+        <div class="scroll-arrow"></div>
+        Scroll to explore
+      </div>
+
+      <!-- Overlay panels (revealed on scroll) -->
+      <div class="overlay-panel" id="panel-1">
+        <p class="panel-tag">Global Coverage</p>
+        <h3>International Shipping to 190+ Countries</h3>
+        <p>From business consignments to personal parcels, our international network handles customs, transit, and delivery end to end.</p>
+        <div class="stat-row">
+          <div class="stat-item"><div class="num">190+</div><div class="lbl">Countries ready</div></div>
+          <div class="stat-item"><div class="num">24/7</div><div class="lbl">Operations</div></div>
+        </div>
+      </div>
+
+      <div class="overlay-panel" id="panel-2">
+        <p class="panel-tag">Live Operations</p>
+        <h3>Live Shipment Tracking</h3>
+        <p>Tracked at every checkpoint, pickup, transit, and delivery, so you're kept up to date.</p>
+        <div class="stat-row">
+          <div class="stat-item"><div class="num">12K</div><div class="lbl">Active Routes</div></div>
+          <div class="stat-item"><div class="num">0.2s</div><div class="lbl">Update Latency</div></div>
+        </div>
+      </div>
+
+      <div class="overlay-panel" id="panel-3">
+        <p class="panel-tag">Why S.L. Express</p>
+        <h3>44 Years of On-Time Delivery</h3>
+        <p>Since 1982, we've built our name on shipments that arrive when we say they will.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2 — Precision Section -->
+  <section id="page2">
+    <div class="page2-inner">
+      <p class="p2-tag">What We Offer</p>
+      <h2 class="p2-title">End-2-End Logistics Solutions</h2>
+      <p class="p2-sub">Seamless logistics for your business</p>
+
+      <div class="p2-cards">
+        <!-- Air Express -->
+        <div class="p2-card" id="card-1">
+          <div class="p2-card-illo">
+            <img src="air-express.png" alt="Air Express" style="width:100%; height:100%; object-fit:cover; display:block; background:#f0e6c8;">
+          </div>
+          <div class="p2-card-body">
+            <h3>Air Express</h3>
+            <p>International shipping, making our logistics truly Borderless.</p>
+            <span class="p2-card-tag">International</span>
+          </div>
+        </div>
+
+        <!-- Road Logistics -->
+        <div class="p2-card" id="card-2">
+          <div class="p2-card-illo">
+            <img src="road-logistics.png" alt="Road Logistics" style="width:100%; height:100%; object-fit:cover; display:block; background:#f0e6c8;">
+          </div>
+          <div class="p2-card-body">
+            <h3>Road Logistics</h3>
+            <p>Reliable domestic logistics and freight across India, with dependable B2C logistics support.</p>
+            <span class="p2-card-tag">Domestic</span>
+          </div>
+        </div>
+
+        <!-- B2B Logistics -->
+        <div class="p2-card" id="card-3">
+          <div class="p2-card-illo">
+            <img src="b2b-logistics.png" alt="B2B Logistics" style="width:100%; height:100%; object-fit:cover; display:block; background:#f0e6c8;">
+          </div>
+          <div class="p2-card-body">
+            <h3>B2B Logistics</h3>
+            <p>Built for businesses with ongoing shipping needs, dedicated account management and supply chain support.</p>
+            <span class="p2-card-tag">Enterprise</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ ACT 3 — SHOWCASE ══ -->
+  <section id="act3">
+    <div class="a3-sticky">
+      <div class="a3-frame">
+
+        <!-- LEFT: tabs -->
+        <div class="a3-left">
+          <p class="a3-eyebrow">Why S.L. Express</p>
+          <h2 class="a3-heading">Built for the demands of modern logistics.</h2>
+          <ul class="a3-tabs">
+            <li class="a3-tab active" data-index="0">
+              <span class="a3-tab-num">01</span>
+              <span class="a3-tab-label">Real-Time Tracking</span>
+            </li>
+            <li class="a3-tab" data-index="1">
+              <span class="a3-tab-num">02</span>
+              <span class="a3-tab-label">Pan-India Coverage</span>
+            </li>
+            <li class="a3-tab" data-index="2">
+              <span class="a3-tab-num">03</span>
+              <span class="a3-tab-label">Express Delivery</span>
+            </li>
+            <li class="a3-tab" data-index="3">
+              <span class="a3-tab-num">04</span>
+              <span class="a3-tab-label">Dedicated Support</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- RIGHT: panels -->
+        <div class="a3-right">
+
+          <!-- Panel 0: Real-Time Tracking -->
+          <div class="a3-panel active" data-index="0">
+            <p class="a3-panel-tag">Live Updates</p>
+            <h3 class="a3-panel-title">Know exactly where<br>your shipment is.</h3>
+            <p class="a3-panel-body">Every step logged and visible, so you're never left guessing.</p>
+            <div class="a3-panel-illo">
+              <svg viewBox="0 0 560 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- track bg -->
+                <line x1="50" y1="72" x2="510" y2="72" stroke="rgba(244,235,208,0.07)" stroke-width="2" stroke-dasharray="6 5"/>
+                <!-- completed segment -->
+                <line x1="50" y1="72" x2="380" y2="72" stroke="rgba(234,179,8,0.35)" stroke-width="2"/>
+                <!-- node 1 Pickup -->
+                <circle cx="50"  cy="72" r="7" fill="rgba(234,179,8,0.18)" stroke="rgba(234,179,8,0.5)" stroke-width="1.5"/>
+                <circle cx="50"  cy="72" r="3" fill="#EAB308"/>
+                <text x="36"  y="92" font-size="8" fill="rgba(244,235,208,0.3)" font-family="sans-serif" text-anchor="middle">Pickup</text>
+                <!-- node 2 Dispatched -->
+                <circle cx="175" cy="72" r="7" fill="rgba(234,179,8,0.18)" stroke="rgba(234,179,8,0.5)" stroke-width="1.5"/>
+                <circle cx="175" cy="72" r="3" fill="#EAB308"/>
+                <text x="175" y="92" font-size="8" fill="rgba(244,235,208,0.3)" font-family="sans-serif" text-anchor="middle">Dispatched</text>
+                <!-- node 3 Hub -->
+                <circle cx="300" cy="72" r="7" fill="rgba(234,179,8,0.18)" stroke="rgba(234,179,8,0.5)" stroke-width="1.5"/>
+                <circle cx="300" cy="72" r="3" fill="#EAB308"/>
+                <text x="300" y="92" font-size="8" fill="rgba(244,235,208,0.3)" font-family="sans-serif" text-anchor="middle">Hub Scan</text>
+                <!-- node 4 active -->
+                <circle cx="380" cy="72" r="12" fill="rgba(234,179,8,0.18)" stroke="#EAB308" stroke-width="1.5"/>
+                <circle cx="380" cy="72" r="5"  fill="#EAB308"/>
+                <circle cx="380" cy="72" r="20" fill="rgba(234,179,8,0.06)">
+                  <animate attributeName="r" values="14;24;14" dur="2s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <text x="380" y="96" font-size="8" fill="#EAB308" font-family="sans-serif" text-anchor="middle">Out for Delivery</text>
+                <!-- node 5 Delivered (dim) -->
+                <circle cx="510" cy="72" r="7" fill="rgba(244,235,208,0.04)" stroke="rgba(244,235,208,0.12)" stroke-width="1.5"/>
+                <circle cx="510" cy="72" r="3" fill="rgba(244,235,208,0.15)"/>
+                <text x="510" y="92" font-size="8" fill="rgba(244,235,208,0.2)" font-family="sans-serif" text-anchor="middle">Delivered</text>
+                <!-- AWB card -->
+                <rect x="178" y="18" width="204" height="36" rx="9" fill="rgba(37,28,24,0.6)" stroke="rgba(234,179,8,0.25)" stroke-width="1"/>
+                <rect x="188" y="28" width="6" height="6" rx="1" fill="#EAB308" opacity="0.7"/>
+                <text x="202" y="36" font-size="9"  fill="rgba(234,179,8,0.8)" font-family="monospace" letter-spacing="1.5">AWB 4821093</text>
+                <text x="202" y="47" font-size="7.5" fill="rgba(244,235,208,0.3)" font-family="sans-serif">Updated 2 min ago · Bengaluru</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Panel 1: Pan-India Coverage -->
+          <div class="a3-panel" data-index="1">
+            <p class="a3-panel-tag">Network</p>
+            <h3 class="a3-panel-title">Every corner of India,<br>connected.</h3>
+            <p class="a3-panel-body">58 branches and 194 associates across the country, ready to receive and dispatch wherever your shipment needs to go.</p>
+            <div class="a3-panel-illo">
+              <svg viewBox="0 0 560 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- horizontal axis line -->
+                <line x1="40" y1="120" x2="520" y2="120" stroke="rgba(244,235,208,0.06)" stroke-width="1"/>
+                <!-- bar chart — regions -->
+                <!-- South -->
+                <rect x="70"  y="48" width="52" height="72" rx="4" fill="rgba(234,179,8,0.55)"/>
+                <rect x="70"  y="44" width="52" height="8"  rx="3" fill="#EAB308"/>
+                <text x="96"  y="138" font-size="8" fill="rgba(244,235,208,0.4)" font-family="sans-serif" text-anchor="middle">South</text>
+                <text x="96"  y="40"  font-size="10" fill="#EAB308" font-family="Georgia,serif" font-weight="700" text-anchor="middle">24</text>
+                <!-- West -->
+                <rect x="164" y="68" width="52" height="52" rx="4" fill="rgba(234,179,8,0.35)"/>
+                <rect x="164" y="64" width="52" height="8"  rx="3" fill="rgba(234,179,8,0.7)"/>
+                <text x="190" y="138" font-size="8" fill="rgba(244,235,208,0.4)" font-family="sans-serif" text-anchor="middle">West</text>
+                <text x="190" y="60"  font-size="10" fill="rgba(234,179,8,0.8)" font-family="Georgia,serif" font-weight="700" text-anchor="middle">16</text>
+                <!-- North -->
+                <rect x="258" y="58" width="52" height="62" rx="4" fill="rgba(234,179,8,0.42)"/>
+                <rect x="258" y="54" width="52" height="8"  rx="3" fill="rgba(234,179,8,0.8)"/>
+                <text x="284" y="138" font-size="8" fill="rgba(244,235,208,0.4)" font-family="sans-serif" text-anchor="middle">North</text>
+                <text x="284" y="50"  font-size="10" fill="rgba(234,179,8,0.85)" font-family="Georgia,serif" font-weight="700" text-anchor="middle">10</text>
+                <!-- East -->
+                <rect x="352" y="78" width="52" height="42" rx="4" fill="rgba(234,179,8,0.28)"/>
+                <rect x="352" y="74" width="52" height="8"  rx="3" fill="rgba(234,179,8,0.55)"/>
+                <text x="378" y="138" font-size="8" fill="rgba(244,235,208,0.4)" font-family="sans-serif" text-anchor="middle">East</text>
+                <text x="378" y="70"  font-size="10" fill="rgba(234,179,8,0.6)" font-family="Georgia,serif" font-weight="700" text-anchor="middle">8</text>
+                <!-- stat chips right side -->
+                <rect x="448" y="40"  width="90" height="34" rx="8" fill="rgba(244,235,208,0.04)" stroke="rgba(234,179,8,0.18)" stroke-width="1"/>
+                <text x="493" y="54"  font-size="15" fill="#EAB308" font-family="Georgia,serif" font-weight="700" text-anchor="middle">58</text>
+                <text x="493" y="66"  font-size="7.5" fill="rgba(244,235,208,0.3)" font-family="sans-serif" text-anchor="middle" letter-spacing="1">BRANCHES</text>
+                <rect x="448" y="84"  width="90" height="34" rx="8" fill="rgba(244,235,208,0.04)" stroke="rgba(234,179,8,0.18)" stroke-width="1"/>
+                <text x="493" y="98"  font-size="15" fill="#EAB308" font-family="Georgia,serif" font-weight="700" text-anchor="middle">194</text>
+                <text x="493" y="110" font-size="7.5" fill="rgba(244,235,208,0.3)" font-family="sans-serif" text-anchor="middle" letter-spacing="1">ASSOCIATES</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Panel 2: Express Delivery -->
+          <div class="a3-panel" data-index="2">
+            <p class="a3-panel-tag">Speed</p>
+            <h3 class="a3-panel-title">Some things<br>just can't wait.</h3>
+            <p class="a3-panel-body">Same day and next day delivery for urgent shipments. Planned and executed to meet your timeline demands.</p>
+            <div class="a3-panel-illo">
+              <svg viewBox="0 0 560 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- background grid lines -->
+                <line x1="0" y1="40"  x2="560" y2="40"  stroke="rgba(244,235,208,0.04)" stroke-width="1"/>
+                <line x1="0" y1="80"  x2="560" y2="80"  stroke="rgba(244,235,208,0.04)" stroke-width="1"/>
+                <line x1="0" y1="120" x2="560" y2="120" stroke="rgba(244,235,208,0.04)" stroke-width="1"/>
+
+                <!-- timeline spine -->
+                <line x1="36" y1="84" x2="440" y2="84" stroke="rgba(244,235,208,0.07)" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <!-- completed portion -->
+                <line x1="36" y1="84" x2="336" y2="84" stroke="rgba(234,179,8,0.4)" stroke-width="1.5"/>
+
+                <!-- Step 1: Pickup — done -->
+                <circle cx="36"  cy="84" r="6" fill="#EAB308" opacity="0.9"/>
+                <text x="36"  y="104" font-size="7.5" fill="rgba(244,235,208,0.35)" font-family="sans-serif" text-anchor="middle">Pickup</text>
+                <text x="36"  y="113" font-size="7"   fill="rgba(244,235,208,0.18)" font-family="sans-serif" text-anchor="middle">06:00</text>
+
+                <!-- Step 2: Sorted — done -->
+                <circle cx="136" cy="84" r="6" fill="#EAB308" opacity="0.9"/>
+                <text x="136" y="104" font-size="7.5" fill="rgba(244,235,208,0.35)" font-family="sans-serif" text-anchor="middle">Hub Sort</text>
+                <text x="136" y="113" font-size="7"   fill="rgba(244,235,208,0.18)" font-family="sans-serif" text-anchor="middle">09:30</text>
+
+                <!-- Step 3: Dispatched — done -->
+                <circle cx="236" cy="84" r="6" fill="#EAB308" opacity="0.9"/>
+                <text x="236" y="104" font-size="7.5" fill="rgba(244,235,208,0.35)" font-family="sans-serif" text-anchor="middle">Dispatched</text>
+                <text x="236" y="113" font-size="7"   fill="rgba(244,235,208,0.18)" font-family="sans-serif" text-anchor="middle">11:15</text>
+
+                <!-- Step 4: Out for delivery — ACTIVE pulse -->
+                <circle cx="336" cy="84" r="8"  fill="rgba(234,179,8,0.15)" stroke="#EAB308" stroke-width="1.5"/>
+                <circle cx="336" cy="84" r="3.5" fill="#EAB308"/>
+                <circle cx="336" cy="84" r="18" fill="rgba(234,179,8,0.07)">
+                  <animate attributeName="r"       values="12;22;12" dur="2s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.25;0;0.25" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <text x="336" y="104" font-size="7.5" fill="#EAB308" font-family="sans-serif" text-anchor="middle">Out for Del.</text>
+                <text x="336" y="113" font-size="7"   fill="rgba(234,179,8,0.5)" font-family="sans-serif" text-anchor="middle">14:40 ●</text>
+
+                <!-- Step 5: Delivered — dim -->
+                <circle cx="440" cy="84" r="6" fill="rgba(244,235,208,0.05)" stroke="rgba(244,235,208,0.15)" stroke-width="1.5"/>
+                <text x="440" y="104" font-size="7.5" fill="rgba(244,235,208,0.2)" font-family="sans-serif" text-anchor="middle">Delivered</text>
+                <text x="440" y="113" font-size="7"   fill="rgba(244,235,208,0.12)" font-family="sans-serif" text-anchor="middle">~17:00</text>
+
+                <!-- right side: delivery cards -->
+                <rect x="466" y="30"  width="82" height="34" rx="8" fill="rgba(244,235,208,0.04)" stroke="rgba(234,179,8,0.2)" stroke-width="1"/>
+                <text x="507" y="45"  font-size="14" fill="#EAB308" font-family="Georgia,serif" font-weight="700" text-anchor="middle">D+0</text>
+                <text x="507" y="57"  font-size="7"  fill="rgba(244,235,208,0.3)" font-family="sans-serif" text-anchor="middle" letter-spacing="0.5">SAME DAY</text>
+
+                <rect x="466" y="74"  width="82" height="34" rx="8" fill="rgba(244,235,208,0.04)" stroke="rgba(234,179,8,0.12)" stroke-width="1"/>
+                <text x="507" y="89"  font-size="14" fill="rgba(234,179,8,0.7)" font-family="Georgia,serif" font-weight="700" text-anchor="middle">D+1</text>
+                <text x="507" y="101" font-size="7"  fill="rgba(244,235,208,0.2)" font-family="sans-serif" text-anchor="middle" letter-spacing="0.5">NEXT DAY</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Panel 3: Dedicated Support -->
+          <div class="a3-panel" data-index="3">
+            <p class="a3-panel-tag">People</p>
+            <h3 class="a3-panel-title">We care about<br>your parcel.</h3>
+            <p class="a3-panel-body">Every shipment is handled with the same attention we'd want for our own.</p>
+            <div class="a3-panel-illo">
+              <svg viewBox="0 0 560 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- client bubble -->
+                <rect x="30"  y="22" width="210" height="50" rx="12" fill="rgba(244,235,208,0.05)" stroke="rgba(244,235,208,0.1)" stroke-width="1"/>
+                <polygon points="44,72 30,88 66,72" fill="rgba(244,235,208,0.05)"/>
+                <text x="50"  y="43" font-size="10" fill="rgba(244,235,208,0.45)" font-family="sans-serif">Where is my shipment?</text>
+                <text x="50"  y="58" font-size="8.5" fill="rgba(244,235,208,0.22)" font-family="sans-serif">AWB 4821093 · Just now</text>
+                <!-- SLE reply bubble -->
+                <rect x="320" y="62" width="210" height="46" rx="12" fill="rgba(234,179,8,0.07)" stroke="rgba(234,179,8,0.22)" stroke-width="1"/>
+                <polygon points="336,62 320,46 356,62" fill="rgba(234,179,8,0.07)"/>
+                <text x="340" y="84"  font-size="10" fill="rgba(244,235,208,0.6)"  font-family="sans-serif">Out for delivery, arrives by 5 pm.</text>
+                <text x="340" y="100" font-size="8" fill="rgba(234,179,8,0.55)"   font-family="sans-serif">Rahul · SLE Support</text>
+                <!-- response time pill removed -->
+              </svg>
+            </div>
+          </div>
+
+          <!-- Semaloop-style right scrollbar -->
+          <div class="a3-scrollbar">
+            <span class="a3-sb-label-top">top</span>
+            <div class="a3-sb-track">
+              <div class="a3-sb-thumb" id="a3-thumb"></div>
+            </div>
+            <span class="a3-sb-label-bot">end</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="last-section">
+
+    <!-- FloatingLines background -->
+    <canvas id="ls-floatinglines-canvas"></canvas>
+
+    <!-- LEFT: Globe + About -->
+    <div class="ls-left">
+      <div class="ls-about">
+        <p class="ls-about-tag">About S.L. Express</p>
+        <h2 class="ls-about-heading">Pioneers in Indian Logistics Since <span>1982.</span></h2>
+        <div class="ls-rule"></div>
+        <p class="ls-about-body">
+          We take pleasure in introducing <strong>SL Express</strong> as one of the pioneers in the Indian logistics industry. Since the inception of our company in 1982, we have been steadily expanding our network to cover the far-flung areas of the country.
+          <br><br>
+          At present we have <strong>4 Regional Offices, 58 major branch offices</strong> and <strong>194 business associates</strong> to cater to the expanding requirements of esteemed organisations, complemented by exceptional speed, reliability and safety.
+          <br><br>
+          Domestic services apart, we are also fully geared to handle <strong>international consignments.</strong>
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT: Contact -->
+    <div class="ls-right">
+      <p class="ls-contact-tag">Get in Touch</p>
+
+      <div class="ls-office-block">
+        <div class="ls-contact-city">Bengaluru Office</div>
+        <div class="ls-contact-detail">Sampangiramanagar, Bengaluru<br>Karnataka, India</div>
+        <div class="ls-contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <a href="tel:+919845623892">+91 98456 23892</a>
+        </div>
+        <div class="ls-contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" fill="none"></path><path d="M22 6l-10 7L2 6"></path><path d="M2 6h20v12H2z"></path></svg>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=slexpressbng@gmail.com" target="_blank">slexpressbng@gmail.com</a>
+        </div>
+        <div class="ls-social-row">
+          <a class="ls-social-btn" href="https://wa.me/919845623892" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 5L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.24h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2Zm5.83 14.24c-.24.68-1.4 1.3-1.93 1.36-.5.06-1.1.09-1.77-.11-.4-.12-.92-.29-1.6-.57-2.8-1.2-4.6-4.05-4.75-4.24-.14-.19-1.14-1.51-1.14-2.88 0-1.37.72-2.05.97-2.32.25-.28.55-.35.73-.35h.53c.17 0 .4-.06.62.48.24.58.83 2 .9 2.14.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.5-.15.15-.31.31-.13.6.17.29.78 1.29 1.68 2.08 1.16 1.03 2.14 1.35 2.44 1.5.29.15.46.13.63-.06.17-.19.72-.84.91-1.13.19-.29.38-.24.63-.14.26.09 1.65.78 1.94.92.29.14.48.21.55.33.07.12.07.68-.17 1.36Z"></path></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="ls-office-block">
+        <div class="ls-contact-city">Chennai Office</div>
+        <div class="ls-contact-detail">Anna Salai, Chennai<br>Tamil Nadu, India</div>
+        <div class="ls-contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <a href="tel:+91442315325">044-4231 5325</a>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <a href="tel:+917200793727">+91 72007 93727</a>
+        </div>
+        <div class="ls-contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" fill="none"></path><path d="M22 6l-10 7L2 6"></path><path d="M2 6h20v12H2z"></path></svg>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=slexpress15@gmail.com" target="_blank">slexpress15@gmail.com</a>
+        </div>
+        <div class="ls-social-row">
+          <a class="ls-social-btn" href="https://wa.me/917200793727" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 5L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.24h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2Zm5.83 14.24c-.24.68-1.4 1.3-1.93 1.36-.5.06-1.1.09-1.77-.11-.4-.12-.92-.29-1.6-.57-2.8-1.2-4.6-4.05-4.75-4.24-.14-.19-1.14-1.51-1.14-2.88 0-1.37.72-2.05.97-2.32.25-.28.55-.35.73-.35h.53c.17 0 .4-.06.62.48.24.58.83 2 .9 2.14.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.5-.15.15-.31.31-.13.6.17.29.78 1.29 1.68 2.08 1.16 1.03 2.14 1.35 2.44 1.5.29.15.46.13.63-.06.17-.19.72-.84.91-1.13.19-.29.38-.24.63-.14.26.09 1.65.78 1.94.92.29.14.48.21.55.33.07.12.07.68-.17 1.36Z"></path></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="ls-bottom">
+      <span class="ls-bottom-brand">S.L. EXPRESS</span>
+      <div class="ls-bottom-links">
+        <a href="faq.html">FAQs</a>
+        <a href="terms-and-conditions.pdf" target="_blank" rel="noopener">Terms and Conditions</a>
+        <a href="privacy-policy.pdf" target="_blank" rel="noopener">Privacy Policy</a>
+      </div>
+      <span class="ls-bottom-copy">Copyright 2026 @SLExpress Logistics Pvt. Ltd.</span>
+    </div>
+
+  </section>
+
+  <!-- ══ MODALS ══ -->
+
+  <!-- Business Enquiry — 2-card chooser -->
+  <div class="modal-overlay" id="bizModal">
+    <div class="modal-box modal-wide">
+      <button class="modal-close" id="bizModalClose">&times;</button>
+
+      <!-- Step 0: chooser -->
+      <div class="biz-step" id="bizStepChoice">
+        <p class="modal-eyebrow">Business Enquiry</p>
+        <h3 class="modal-title">How can we help?</h3>
+        <p class="modal-sub">Kindly select an option</p>
+        <div class="modal-choice-grid">
+          <button class="modal-choice-card" id="shipParcelCard">
+            <svg class="modal-choice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>
+            <div class="modal-choice-title">Ship a Parcel</div>
+            <div class="modal-choice-desc">Send a shipment domestically or internationally. Get rates and book a pickup.</div>
+          </button>
+          <button class="modal-choice-card" id="partnerCard">
+            <svg class="modal-choice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 21v-1a6 6 0 0 1 6-6h0a6 6 0 0 1 6 6v1"/><path d="M16 14a4.5 4.5 0 0 1 4.5 4.5V21"/></svg>
+            <div class="modal-choice-title">Partner with Us</div>
+            <div class="modal-choice-desc">For agencies, partnerships, or franchise enquiries. </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 1: Ship a Parcel form -->
+      <div class="biz-step" id="bizStepShip" style="display:none;">
+        <button class="biz-back" id="shipBackBtn" type="button">&larr; Back</button>
+        <p class="modal-eyebrow">Ship a Parcel</p>
+        <h3 class="modal-title">Tell us about your shipment.</h3>
+        <p class="modal-sub">We'll get back to you with rates and pickup options.</p>
+        <div class="biz-form-grid">
+          <div class="modal-input-wrap">
+            <label for="shipName">Full Name</label>
+            <input class="pill-input" id="shipName" type="text" placeholder="Your name">
+          </div>
+          <div class="modal-input-wrap">
+            <label for="shipPhone">Phone Number</label>
+            <input class="pill-input" id="shipPhone" type="tel" placeholder="+91 00000 00000">
+          </div>
+          <div class="modal-input-wrap">
+            <label for="shipEmail">Email</label>
+            <input class="pill-input" id="shipEmail" type="email" placeholder="you@example.com">
+          </div>
+          <div class="modal-input-wrap">
+            <label>Which branch would you like to book through?</label>
+            <div class="pill-select" id="shipBranchSelect" data-value="">
+              <button type="button" class="pill-select-btn">Select a branch</button>
+              <div class="pill-select-list">
+                <div class="pill-select-option" data-value="Bengaluru">Bengaluru</div>
+                <div class="pill-select-option" data-value="Chennai">Chennai</div>
+                <div class="pill-select-option" data-value="Not sure / Other">Not sure / Other</div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-input-wrap">
+            <label for="shipPickup">Pickup Address</label>
+            <input class="pill-input" id="shipPickup" type="text" placeholder="Pickup location">
+          </div>
+          <div class="modal-input-wrap">
+            <label for="shipDelivery">Delivery Address</label>
+            <input class="pill-input" id="shipDelivery" type="text" placeholder="Destination, city / country">
+          </div>
+          <div class="modal-input-wrap">
+            <label for="shipWeight">Approx. Weight (kg)</label>
+            <input class="pill-input" id="shipWeight" type="text" placeholder="e.g. 5 kg">
+          </div>
+          <div class="modal-input-wrap">
+            <label for="shipCount">Number of Parcels</label>
+            <input class="pill-input" id="shipCount" type="text" placeholder="e.g. 1">
+          </div>
+          <div class="modal-input-wrap">
+            <label for="shipGoods">Nature of Goods</label>
+            <input class="pill-input" id="shipGoods" type="text" placeholder="e.g. documents, electronics, textiles">
+          </div>
+          <div class="modal-input-wrap">
+            <label for="shipDate">Preferred Pickup Date</label>
+            <input class="pill-input" id="shipDate" type="date">
+          </div>
+        </div>
+        <button class="modal-submit" id="shipSubmitBtn" type="button">Send Enquiry</button>
+        <p class="biz-form-note">This will auto-send an email to the selected branch</p>
+      </div>
+
+      <!-- Step 1: Partner with Us form -->
+      <div class="biz-step" id="bizStepPartner" style="display:none;">
+        <button class="biz-back" id="partnerBackBtn" type="button">&larr; Back</button>
+        <p class="modal-eyebrow">Partner with Us</p>
+        <h3 class="modal-title">Let's talk business.</h3>
+        <p class="modal-sub">Recurring volume, franchise, or partnerships, we'll route this to our business team.</p>
+        <div class="biz-form-grid">
+          <div class="modal-input-wrap">
+            <label for="partnerName">Full Name</label>
+            <input class="pill-input" id="partnerName" type="text" placeholder="Your name">
+          </div>
+          <div class="modal-input-wrap">
+            <label for="partnerCompany">Company Name</label>
+            <input class="pill-input" id="partnerCompany" type="text" placeholder="Your company">
+          </div>
+          <div class="modal-input-wrap">
+            <label for="partnerPhone">Phone Number</label>
+            <input class="pill-input" id="partnerPhone" type="tel" placeholder="+91 00000 00000">
+          </div>
+          <div class="modal-input-wrap">
+            <label for="partnerEmail">Email</label>
+            <input class="pill-input" id="partnerEmail" type="email" placeholder="you@example.com">
+          </div>
+          <div class="modal-input-wrap">
+            <label>Which branch would you like to partner with?</label>
+            <div class="pill-select" id="partnerBranchSelect" data-value="">
+              <button type="button" class="pill-select-btn">Select a branch</button>
+              <div class="pill-select-list">
+                <div class="pill-select-option" data-value="Bengaluru">Bengaluru</div>
+                <div class="pill-select-option" data-value="Chennai">Chennai</div>
+                <div class="pill-select-option" data-value="Not sure / Other">Not sure / Other</div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-input-wrap">
+            <label for="partnerMessage">What are you looking for?</label>
+            <input class="pill-input" id="partnerMessage" type="text" placeholder="e.g. franchise enquiry, monthly volume shipping">
+          </div>
+        </div>
+        <button class="modal-submit" id="partnerSubmitBtn" type="button">Send Enquiry</button>
+        <p class="biz-form-note">This will auto-send an email to the selected branch</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Track Shipment -->
+  <div class="modal-overlay" id="trackModal">
+    <div class="modal-box">
+      <button class="modal-close" id="trackModalClose">&times;</button>
+      <p class="modal-eyebrow">Track Shipment</p>
+      <h3 class="modal-title">Enter your AWB or tracking number</h3>
+      <p class="modal-sub"> </p>
+      <div class="modal-input-wrap">
+        <label for="awbInput">AWB / Tracking Number</label>
+        <input class="pill-input" id="awbInput" type="text" placeholder="e.g. SLE2026000123">
+      </div>
+      <button class="modal-submit" id="trackSubmitBtn">Track</button>
+      <div class="modal-result" id="trackResult"></div>
+    </div>
+  </div>
+
+  <!-- Tracking Result — full page -->
+  <div class="tr-page" id="trackingResultPage">
+    <button class="tr-close" id="trackingResultClose">&times;</button>
+    <div class="tr-content" id="trackingResultContent"></div>
+  </div>
+
+  <!-- POD Modal -->
+  <div id="pod-modal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[300] p-4">
+    <div class="bg-zinc-900 p-4 md:p-6 rounded-3xl max-w-2xl w-full mx-4">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-xl md:text-2xl">Proof of Delivery</h3>
+        <button onclick="closePodModal()" class="text-2xl md:text-3xl text-zinc-400 hover:text-white cursor-pointer">&times;</button>
+      </div>
+      <div id="pod-image-container" class="bg-black rounded-2xl overflow-hidden"></div>
+      <button id="pod-download-link" class="download-btn mt-4" onclick="downloadPod(this.dataset.url, this.dataset.tracking)">
+        <div class="button-content">
+          <div class="svg-container">
+            <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M19.479 10.092c-.212-3.951-3.473-7.092-7.479-7.092-4.005 0-7.267 3.141-7.479 7.092-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h13c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408zm-7.479 6.908l-4-4h3v-4h2v4h3l-4 4z"/>
+            </svg>
+          </div>
+          <div class="text-container">
+            <div class="text">Download</div>
+          </div>
+        </div>
+      </button>
+      <button onclick="closePodModal()" class="mt-4 md:mt-6 w-full bg-zinc-800 hover:bg-zinc-700 py-3 md:py-4 rounded-2xl transition-all cursor-pointer">Close</button>
+    </div>
+  </div>
+
+    <div class="edit-modal" id="edit-modal">
+      <div class="edit-box">
+        <div class="flex justify-between items-center mb-5">
+          <div class="heading-font text-xl text-amber-400">Edit Billing Entry</div>
+          <button onclick="closeEditModal()" class="text-zinc-500 hover:text-white text-xl cursor-pointer">×</button>
+        </div>
+        <label class="block text-xs text-zinc-500 mb-1 uppercase tracking-wider">No. of boxes</label>
+        <input class="edit-input-full" id="edit-boxes"  type="number" placeholder="No. of boxes" autocomplete="off">
+        <label class="block text-xs text-zinc-500 mb-1 uppercase tracking-wider">Total weight (kg)</label>
+        <input class="edit-input-full" id="edit-weight" type="number" step="0.1" placeholder="Total weight (kg)" autocomplete="off">
+        <label class="block text-xs text-zinc-500 mb-1 uppercase tracking-wider">Rate per kg (₹)</label>
+        <input class="edit-input-full" id="edit-rate"   type="number" step="0.5" placeholder="Rate per kg (₹)" autocomplete="off">
+        <div class="calc-preview mb-4">
+          <span class="calc-label"  id="edit-calc-desc">—</span>
+          <span class="calc-amount" id="edit-calc-amt">—</span>
+        </div>
+        <div class="flex gap-3">
+          <button onclick="saveEditBilling()" class="flex-1 bg-amber-500 hover:bg-amber-600 text-black font-bold py-3 rounded-2xl cursor-pointer">Save</button>
+          <button onclick="closeEditModal()"  class="flex-1 bg-zinc-700 hover:bg-zinc-600 text-white py-3 rounded-2xl cursor-pointer">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  <!-- Admin Panel -->
+  <div id="admin-panel" class="hidden fixed inset-0 bg-zinc-950 overflow-auto z-[100]">
+    <div class="max-w-[1800px] mx-auto p-4 md:p-8">
+      <div id="security-banner" class="warning-banner hidden">
+        <i class="fas fa-shield-alt"></i>
+        <span id="security-msg">Session security notice</span>
+      </div>
+
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-0 mb-8 md:mb-10">
+        <h1 id="dashboard-heading" class="heading-font text-3xl md:text-5xl">Admin Dashboard</h1>
+        <button onclick="logoutAdmin()" class="logout-fab-btn">
+          <span class="logout-fab-sign">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M16 17l5-5-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="logout-fab-text">Logout</span>
+        </button>
+      </div>
+
+      <!-- STATUS BADGE COUNTERS - NEW FEATURE -->
+      <div class="status-badge-container">
+        <div class="status-badge badge-delivered">
+          <div class="status-badge-icon"></div>
+          <div class="status-badge-content">
+            <h3>Delivered</h3>
+            <p id="badge-delivered-count">0</p>
+          </div>
+        </div>
+        
+        <div class="status-badge badge-intransit">
+          <div class="status-badge-icon"></div>
+          <div class="status-badge-content">
+            <h3>In Transit</h3>
+            <p id="badge-intransit-count">0</p>
+          </div>
+        </div>
+        
+        <div class="status-badge badge-pending">
+          <div class="status-badge-icon"></div>
+          <div class="status-badge-content">
+            <h3>Pending</h3>
+            <p id="badge-pending-count">0</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-3 mb-8 overflow-x-auto">
+        <span class="tab-underline" id="parentTabUnderline"></span>
+        <button onclick="switchParentTab(0)" id="parent0" class="parent-tab active px-6 md:px-10 py-3 md:py-4 text-black font-semibold rounded-2xl whitespace-nowrap transition-all cursor-pointer">Shipments</button>
+        <button onclick="switchParentTab(1)" id="parent1" class="parent-tab px-6 md:px-10 py-3 md:py-4 hover:bg-white/10 rounded-2xl whitespace-nowrap transition-all cursor-pointer">Add Shipment</button>
+        <button onclick="switchParentTab(2)" id="parent2" class="parent-tab px-6 md:px-10 py-3 md:py-4 hover:bg-white/10 rounded-2xl whitespace-nowrap transition-all cursor-pointer">Analytics</button>
+        <button onclick="switchParentTab(3)" id="parent3" class="parent-tab px-6 md:px-10 py-3 md:py-4 hover:bg-white/10 rounded-2xl whitespace-nowrap transition-all cursor-pointer">Activity Log</button>
+        <button onclick="switchParentTab(4)" id="parent4" class="parent-tab px-6 md:px-10 py-3 md:py-4 hover:bg-white/10 rounded-2xl whitespace-nowrap transition-all cursor-pointer">Billing</button>
+        <button onclick="switchParentTab(5)" id="parent5" class="parent-tab px-6 md:px-10 py-3 md:py-4 hover:bg-white/10 rounded-2xl whitespace-nowrap transition-all cursor-pointer">Statistics</button>
+      </div>
+
+      <!-- Shipments Tab -->
+      <div id="parent-content-0" class="hidden">
+        <div class="flex flex-col md:flex-row gap-3 mb-6">
+          <div class="relative flex items-center flex-1">
+            <input id="search-input" placeholder="Search by Tracking Number..."
+              class="w-full bg-zinc-800 border border-white/20 rounded-2xl px-4 md:px-6 py-3 md:py-4 text-base md:text-lg focus:outline-none focus:border-amber-500"
+              onkeyup="renderShipments()"
+              autocomplete="off">
+                  
+            <button id="refresh-shipments-btn" onclick="refreshShipments()" 
+                    class="absolute right-4 text-zinc-500 hover:text-amber-400 transition-all cursor-pointer"
+                    title="Refresh shipments">
+              <i class="fas fa-rotate-right text-sm"></i>
+            </button>
+          </div>
+          <select id="shipment-month-filter"
+                  onchange="onShipmentMonthChange(this.value)"
+                  class="bg-zinc-800 border border-white/10 text-zinc-300 text-sm px-4 py-3 rounded-2xl outline-none focus:border-amber-500 cursor-pointer">
+            <option value="all">All Months</option>
+          </select>
+        </div> 
+        <div class="flex flex-wrap gap-2 md:gap-3 mb-6 md:mb-8 border-b border-white/10 pb-4 overflow-x-auto">
+          <span class="tab-underline" id="subTabUnderline"></span>
+          <button onclick="switchSubTab(0)" id="subtab0" class="sub-tab active px-6 md:px-8 py-2 md:py-3 rounded-2xl text-black font-semibold whitespace-nowrap transition-all cursor-pointer">Update<span id="subtab0-count"></span></button>
+          <button onclick="switchSubTab(1)" id="subtab1" class="sub-tab px-6 md:px-8 py-2 md:py-3 rounded-2xl hover:bg-white/10 whitespace-nowrap transition-all cursor-pointer">Pending<span id="subtab1-count"></span></button>
+          <button onclick="switchSubTab(2)" id="subtab2" class="sub-tab px-6 md:px-8 py-2 md:py-3 rounded-2xl hover:bg-white/10 whitespace-nowrap transition-all cursor-pointer">Delivered<span id="subtab2-count"></span></button>
+        </div>
+
+        <div class="bg-zinc-900 rounded-3xl overflow-x-auto">
+          <table class="w-full text-sm md:text-base">
+            <thead class="bg-zinc-800">
+              <tr>
+                <th class="p-3 md:p-5 text-left">Tracking</th>
+                <th class="p-3 md:p-5 text-left hidden sm:table-cell">Customer</th>
+                <th class="p-3 md:p-5 text-left hidden md:table-cell">Route</th>
+                <th class="p-3 md:p-5 text-left">Status</th>
+                <th class="p-3 md:p-5 text-left hidden lg:table-cell">Date</th>
+                <th class="p-3 md:p-5 text-left">Location</th>
+                <th class="p-3 md:p-5 text-left">POD</th>
+                <th class="p-3 md:p-5 text-left">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="shipments-body" class="divide-y divide-white/10"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Add Shipment Tab -->
+      <div id="parent-content-1" class="hidden grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- ADD CLIENT PANEL -->
+        <div class="bg-zinc-900 p-6 rounded-3xl flex flex-col gap-4">
+          <h2 class="text-lg font-semibold text-zinc-200">Add Client</h2>
+          <input id="new-client-id" placeholder="Customer ID"
+                class="bg-zinc-800 border border-white/10 focus:border-amber-400/60 p-3 rounded-xl text-sm outline-none transition-colors"
+                autocomplete="off">
+          <input id="new-client-name" placeholder="Customer Name"
+                class="bg-zinc-800 border border-white/10 focus:border-amber-400/60 p-3 rounded-xl text-sm outline-none transition-colors"
+                autocomplete="off">
+          <button onclick="addClient()" class="tab-3d tab-3d-indigo">
+            <span class="edge"></span>
+            <span class="shadow"></span>
+            <span class="front">Add Client</span>
+          </button>
+          <div id="client-list" class="mt-2 max-h-64 overflow-y-auto">
+            <p class="text-zinc-600 text-xs text-center py-4">No clients yet</p>
+          </div>
+        </div>
+
+        <!-- CREATE SHIPMENT PANEL -->
+        <div class="md:col-span-2 bg-zinc-900 p-6 md:p-10 rounded-3xl">
+          <h2 class="text-2xl md:text-3xl mb-6 md:mb-8">Create New Shipment</h2>
+          <form id="add-shipment-form" onsubmit="event.preventDefault(); addNewShipment();">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <input id="new-tracking" name="tracking" placeholder="Tracking/AWB Number" class="bg-zinc-800 p-3 md:p-5 rounded-2xl text-sm md:text-base" autocomplete="off">
+              <input id="new-customer" name="customer" placeholder="Customer/Consignor" class="bg-zinc-800 p-3 md:p-5 rounded-2xl text-sm md:text-base" autocomplete="on">
+              <input id="new-custid" name="custid" placeholder="Customer ID" class="bg-zinc-800 p-3 md:p-5 rounded-2xl text-sm md:text-base" oninput="autofillCustomer()" autocomplete="off">
+              <div class="relative">
+                <input id="new-consignee" name="consignee" placeholder="Consignee Name (receiver)" class="bg-zinc-800 p-3 md:p-5 rounded-2xl text-sm md:text-base w-full" autocomplete="off" oninput="showSuggestions('new-consignee', 'consignee-suggestions', 'consignee')">
+                <div id="consignee-suggestions" class="absolute z-50 w-full bg-zinc-800 border border-white/10 rounded-xl mt-1 hidden max-h-40 overflow-y-auto"></div>
+              </div>
+                <div class="relative">
+                <input id="new-origin" name="origin" placeholder="Origin City" class="bg-zinc-800 p-3 md:p-5 rounded-2xl text-sm md:text-base w-full" autocomplete="off" oninput="showSuggestions('new-origin', 'origin-suggestions', 'origin')">
+                <div id="origin-suggestions" class="absolute z-50 w-full bg-zinc-800 border border-white/10 rounded-xl mt-1 hidden max-h-40 overflow-y-auto"></div>
+              </div>
+              <div class="relative">
+                <input id="new-destination" name="destination" placeholder="Destination City" class="bg-zinc-800 p-3 md:p-5 rounded-2xl text-sm md:text-base w-full" autocomplete="off" oninput="showSuggestions('new-destination', 'destination-suggestions', 'destination')">
+                <div id="destination-suggestions" class="absolute z-50 w-full bg-zinc-800 border border-white/10 rounded-xl mt-1 hidden max-h-40 overflow-y-auto"></div>
+              </div>
+              <select id="new-status" class="bg-zinc-800 p-3 md:p-5 rounded-2xl text-sm md:text-base">
+                <option value="Picked Up">Picked Up</option>
+                <option value="In Transit" selected>In Transit</option>
+                <option value="Out for Delivery">Out for Delivery</option>
+                <option value="Delivered">Delivered</option>
+                <option value="Others">Others (Custom)</option>
+              </select>
+              <input id="new-date" type="date" class="bg-zinc-800 p-3 md:p-5 rounded-2xl text-sm md:text-base">
+            </div>
+          
+            <!-- BILLING ZONE -->
+            <div class="billing-zone">
+              <div class="billing-zone-label">
+                <i class="fa-solid fa-lock" style="font-size:10px"></i> Billing details · admin only
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <label class="block text-xs text-zinc-500 mb-2 uppercase tracking-wider">No. of boxes</label>
+                  <input id="new-boxes" type="number" min="1" placeholder="e.g. 12"
+                        class="bg-zinc-800 border border-white/10 focus:border-amber-400/60 p-3 rounded-xl text-sm w-full outline-none transition-colors"
+                        oninput="updateCalcPreview()" autocomplete="off">
+                </div>
+                <div>
+                  <label class="block text-xs text-zinc-500 mb-2 uppercase tracking-wider">Total weight (kg)</label>
+                  <input id="new-weight" type="number" min="0" step="0.1" placeholder="e.g. 340"
+                        class="bg-zinc-800 border border-white/10 focus:border-amber-400/60 p-3 rounded-xl text-sm w-full outline-none transition-colors"
+                        oninput="updateCalcPreview()" autocomplete="off">
+                </div>
+                <div>
+                  <label class="block text-xs text-zinc-500 mb-2 uppercase tracking-wider">Rate per kg (₹)</label>
+                  <input id="new-rate" type="number" min="0" step="0.5" placeholder="e.g. 38"
+                        class="bg-zinc-800 border border-white/10 focus:border-amber-400/60 p-3 rounded-xl text-sm w-full outline-none transition-colors"
+                        oninput="updateCalcPreview()" autocomplete="off">
+                </div>
+              </div>
+              <div class="calc-preview">
+                <span class="calc-label" id="calc-desc">Enter weight & rate to preview bill amount</span>
+                <span class="calc-amount" id="calc-amt">—</span>
+              </div>
+            </div>
+            <button type="button" onclick="addNewShipment()" class="tab-3d tab-3d-indigo tab-3d-lg">
+              <span class="edge"></span>
+              <span class="shadow"></span>
+              <span class="front">Create Shipment</span>
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- ════ TAB 4: BILLING ════ -->
+      <div id="parent-content-4" class="hidden">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+          <div>
+            <div class="flex items-center gap-3">
+              <h2 class="heading-font text-2xl md:text-3xl text-white">Billing</h2>
+              <button id="refresh-billing-btn" onclick="refreshBilling()"
+                      class="text-zinc-500 hover:text-amber-400 transition-all cursor-pointer mt-1"
+                      title="Refresh billing">
+                <i class="fas fa-rotate-right text-sm"></i>
+              </button>
+            </div>
+            <p class="text-zinc-500 text-sm mt-1">Monthly client bills · weight × rate /kg</p>
+          </div>
+          <div class="flex gap-3 items-center flex-wrap">
+            <select id="bill-month"
+                    class="bg-zinc-800 border border-white/10 text-zinc-300 text-sm px-4 py-2 rounded-2xl outline-none focus:border-amber-500 cursor-pointer"
+                    onchange="renderBilling()">
+            </select>
+            <div class="flex items-center gap-2 bg-zinc-800 border border-white/10 rounded-2xl px-3 py-2">
+              <input type="date" id="sum-from" class="bg-transparent text-zinc-300 text-xs outline-none cursor-pointer">
+              <span class="text-zinc-600 text-xs">→</span>
+              <input type="date" id="sum-to" class="bg-transparent text-zinc-300 text-xs outline-none cursor-pointer">
+            </div>
+            <button onclick="openSummary()"
+                    class="bg-amber-600 hover:bg-amber-700 px-5 py-2 rounded-2xl text-sm font-semibold transition-all cursor-pointer flex items-center gap-2">
+              <i class="fa-solid fa-table-list text-xs"></i> Summary
+            </button>
+          </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6" id="bill-stats"></div>
+
+        <div class="bill-card" id="bill-list-card">
+          <div class="flex justify-between items-center mb-4">
+            <span class="text-sm font-semibold text-zinc-200">Client bills — <span id="bill-month-label">May 2026</span></span>
+            <span class="text-xs text-zinc-600">Click a row to view breakdown + export invoice</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="bill-table">
+              <thead>
+                <tr>
+                  <th>Customer</th><th>Cust ID</th><th>Boxes</th>
+                  <th>Total kg</th><th>Rate /kg</th><th>Bill amount</th>
+                  <th>Status</th><th style="width:70px"></th>
+                </tr>
+              </thead>
+              <tbody id="bill-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="bill-detail" style="display:none">
+          <div class="back-link" onclick="closeBillDetail()">
+            <i class="fa-solid fa-arrow-left" style="font-size:10px"></i> Back to billing
+          </div>
+          <div class="bill-card" style="margin-bottom:0">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 mb-4">
+              <div>
+                <div class="text-base font-semibold text-zinc-100" id="det-cname"></div>
+                <div class="text-xs text-zinc-600 mt-1" id="det-cid"></div>
+              </div>
+              <div class="flex gap-2 flex-wrap items-center">
+                <button onclick="openInvoiceEditor(detailCustId)" id="edit-invoice-btn"
+                        class="bg-zinc-800 hover:bg-zinc-700 border border-white/10 px-4 py-2 rounded-xl text-xs font-semibold cursor-pointer flex items-center gap-2 transition-all">
+                  <i class="fa-solid fa-pen-to-square text-xs"></i> Edit invoice
+                </button>
+                <button onclick="markPaid()" id="mark-paid-btn"
+                        class="px-4 py-2 rounded-xl text-xs font-semibold cursor-pointer flex items-center gap-1 transition-all bg-emerald-600 hover:bg-emerald-700">
+                  <i class="fa-solid fa-check text-xs"></i>
+                  <span>Mark paid</span>
+                </button>
+                <div class="flex items-center gap-2 bg-zinc-800 border border-white/10 rounded-xl px-3 py-2">
+                  <input type="date" id="range-from" class="bg-transparent text-zinc-300 text-xs outline-none cursor-pointer">
+                  <span class="text-zinc-600 text-xs">→</span>
+                  <input type="date" id="range-to" class="bg-transparent text-zinc-300 text-xs outline-none cursor-pointer">
+                </div>
+                <button onclick="openInvoiceView(detailCustId)"
+                        class="bg-emerald-700 hover:bg-emerald-600 px-4 py-2 rounded-xl text-xs font-semibold cursor-pointer flex items-center gap-2">
+                  <i class="fa-solid fa-file-excel text-xs"></i> View Invoice
+                </button>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 bg-zinc-950 rounded-xl p-4 mb-4">
+              <div><div class="text-xs text-zinc-600 uppercase tracking-wider mb-1">Month</div>   <div class="text-sm font-medium text-zinc-200" id="det-month"></div></div>
+              <div><div class="text-xs text-zinc-600 uppercase tracking-wider mb-1">Boxes</div>   <div class="text-sm font-medium text-zinc-200" id="det-boxes"></div></div>
+              <div><div class="text-xs text-zinc-600 uppercase tracking-wider mb-1">Weight</div>  <div class="text-sm font-medium text-zinc-200" id="det-wt"></div></div>
+              <div><div class="text-xs text-zinc-600 uppercase tracking-wider mb-1">Rate /kg</div><div class="text-sm font-medium text-zinc-200" id="det-rate"></div></div>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="bill-table">
+                <thead>
+                  <tr>
+                    <th>S/No</th><th>Date</th><th>AWB No.</th>
+                    <th>Consignee</th><th>Destination</th>
+                    <th>Qty (boxes)</th><th>Weight (kg)</th><th>Amount</th>
+                    <th style="width:44px"></th>
+                  </tr>
+                </thead>
+                <tbody id="det-tbody"></tbody>
+              </table>
+            </div>
+            <div class="total-bar">
+              <div class="text-xs text-zinc-600" id="det-summary"></div>
+              <div class="heading-font text-2xl text-amber-400" id="det-total"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ════ TAB 5: STATISTICS ════ -->
+      <div id="parent-content-5" class="hidden">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+          <div>
+            <h2 class="heading-font text-2xl md:text-4xl text-white">Statistics</h2>
+            <p class="text-zinc-500 text-sm mt-1">Billed amounts across all months · not collected</p>
+          </div>
+          <div class="text-xs text-zinc-600 bg-zinc-900 border border-white/10 px-4 py-2 rounded-full">Live from shipment data</div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div class="md:col-span-2 relative overflow-hidden rounded-3xl p-6 md:p-8" style="background:linear-gradient(135deg,#1a1200 0%,#1a1a1a 60%,#111 100%);border:1px solid rgba(251,191,36,0.25);">
+            <div class="absolute top-0 right-0 w-48 h-48 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(251,191,36,0.08) 0%,transparent 70%);transform:translate(30%,-30%)"></div>
+            <div class="text-xs text-amber-500/70 uppercase tracking-widest font-semibold mb-2">Total Billed · All Time</div>
+            <div class="heading-font text-4xl md:text-5xl text-amber-400 mb-3" id="stats-all-time">—</div>
+            <div class="flex flex-wrap gap-4 mt-2">
+              <div class="text-xs text-zinc-500"><span class="text-zinc-300 font-medium" id="stats-shipcount">—</span> shipments</div>
+              <div class="text-xs text-zinc-500"><span class="text-zinc-300 font-medium" id="stats-boxcount">—</span> boxes</div>
+              <div class="text-xs text-zinc-500"><span class="text-zinc-300 font-medium" id="stats-kgcount">—</span> kg total</div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="flex-1 rounded-2xl p-5 flex flex-col justify-between" style="background:#111;border:1px solid rgba(16,185,129,0.2);">
+              <div class="text-xs text-emerald-400/70 uppercase tracking-widest font-semibold mb-1">Best Month</div>
+              <div class="heading-font text-2xl text-emerald-400" id="stats-best-amt">—</div>
+              <div class="text-xs text-zinc-600 mt-1" id="stats-best-month">—</div>
+            </div>
+            <div class="flex-1 rounded-2xl p-5 flex flex-col justify-between" style="background:#111;border:1px solid rgba(139,92,246,0.2);">
+              <div class="text-xs text-violet-400/70 uppercase tracking-widest font-semibold mb-1">Top Client</div>
+              <div class="heading-font text-xl text-violet-400 leading-tight" id="stats-top-client">—</div>
+              <div class="text-xs text-zinc-600 mt-1" id="stats-top-client-amt">—</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-3xl p-6 mb-6" style="background:#111;border:1px solid rgba(255,255,255,0.06);">
+          <div class="flex items-center justify-between mb-5">
+            <div class="text-sm font-semibold text-zinc-200">Month-by-month</div>
+            <div class="text-xs text-zinc-600">sorted newest first</div>
+          </div>
+          <div id="stats-month-rows" class="space-y-3"></div>
+        </div>
+
+        <div class="rounded-3xl p-6" style="background:#111;border:1px solid rgba(255,255,255,0.06);">
+          <div class="flex items-center justify-between mb-5">
+            <div class="text-sm font-semibold text-zinc-200">Per-client breakdown</div>
+            <div class="text-xs text-zinc-600">ranked by total billed</div>
+          </div>
+          <div id="stats-client-cards" class="space-y-3"></div>
+        </div>
+      </div>
+
+
+      <!-- Analytics Tab -->
+      <div id="parent-content-2" class="hidden">
+        <div class="admin-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8">
+          <div class="bg-zinc-900 p-6 rounded-2xl border border-white/10 smooth-transition hover:border-amber-400/30">
+            <p class="text-zinc-400 text-sm mb-2">Total Shipments</p>
+            <p class="heading-font text-3xl md:text-4xl text-amber-400" id="total-shipments">0</p>
+          </div>
+          <div class="bg-zinc-900 p-6 rounded-2xl border border-white/10 smooth-transition hover:border-emerald-400/30">
+            <p class="text-zinc-400 text-sm mb-2">Delivered</p>
+            <p class="heading-font text-3xl md:text-4xl text-emerald-400" id="delivered-count">0</p>
+          </div>
+          <div class="bg-zinc-900 p-6 rounded-2xl border border-white/10 smooth-transition hover:border-yellow-400/30">
+            <p class="text-zinc-400 text-sm mb-2">In Transit</p>
+            <p class="heading-font text-3xl md:text-4xl text-yellow-400" id="in-transit-count">0</p>
+          </div>
+          <div class="bg-zinc-900 p-6 rounded-2xl border border-white/10 smooth-transition hover:border-red-400/30">
+            <p class="text-zinc-400 text-sm mb-2">Pending</p>
+            <p class="heading-font text-3xl md:text-4xl text-red-400" id="pending-count">0</p>
+          </div>
+        </div>
+
+        <div class="admin-grid grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <div class="bg-zinc-900 p-6 rounded-2xl border border-white/10">
+            <h3 class="text-lg md:text-xl font-semibold mb-4">Shipment Status Distribution</h3>
+            <div class="chart-container">
+              <canvas id="statusChart"></canvas>
+            </div>
+          </div>
+          <div class="bg-zinc-900 p-6 rounded-2xl border border-white/10">
+            <h3 class="text-lg md:text-xl font-semibold mb-4">Shipments by Route</h3>
+            <div class="chart-container">
+              <canvas id="routeChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-zinc-900 p-6 rounded-2xl border border-white/10">
+          <h3 class="text-lg md:text-xl font-semibold mb-4">Daily Activity</h3>
+          <div class="chart-container">
+            <canvas id="activityChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity Log Tab -->
+      <div id="parent-content-3" class="hidden">
+        <div class="bg-zinc-900 p-6 rounded-2xl border border-white/10">
+          <h2 class="text-2xl font-semibold mb-6">Admin Activity Log</h2>
+          <div class="flex gap-3 mb-6">
+            <button onclick="clearActivityLog()" class="btn-slide btn-slide-red">
+              <span class="btn-text-one">Clear Log</span>
+              <span class="btn-text-two">Clear Log?</span>
+            </button>
+
+            <button onclick="downloadActivityLog()" class="btn-slide btn-slide-green">
+              <span class="btn-text-one">Download CSV</span>
+              <span class="btn-text-two">Download?</span>
+            </button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead class="bg-zinc-800">
+                <tr>
+                  <th class="p-3 text-left w-44">Timestamp</th>
+                  <th class="p-3 text-left w-40">Admin</th>
+                  <th class="p-3 text-left w-40">Action</th>
+                  <th class="p-3 text-left">Details</th>
+                  <th class="p-3 text-left w-24">Branch</th>
+                </tr>
+              </thead>
+              <tbody id="activity-body" class="divide-y divide-white/10"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INVOICE EDITOR OVERLAY -->
+  <div id="invoice-editor" class="hidden" style="position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.75);overflow-y:auto;" onclick="if(event.target===this)closeInvoiceEditor()">
+    <div style="max-width:860px;margin:24px auto;padding:0 12px;">
+      <div class="bg-zinc-900 border border-white/10 rounded-2xl p-4">
+
+        <div class="flex flex-wrap items-center gap-3 mb-3">
+          <label class="theme-switch" id="inv-toggle-wrap" title="Day is BLR, night is Chennai">
+            <input type="checkbox" class="theme-switch__checkbox" id="inv-toggle" onchange="invToggleBranch()">
+            <div class="theme-switch__container">
+              <div class="theme-switch__clouds"></div>
+              <svg class="theme-switch__vs" viewBox="60 0 280 100" fill="currentColor" aria-hidden="true">
+                <rect x="40" y="92" width="320" height="8"/>
+                <rect x="40" y="58" width="320" height="34"/>
+                <rect x="150" y="42" width="100" height="50"/>
+                <rect x="144" y="38" width="112" height="5"/>
+                <rect x="178" y="26" width="44" height="13"/>
+                <path d="M176 26Q200 -6 224 26Z"/>
+                <rect x="199" y="0" width="2" height="10"/>
+                <path d="M70 58Q80 40 90 58Z"/><path d="M310 58Q320 40 330 58Z"/>
+              </svg>
+              <svg class="theme-switch__gop" viewBox="10 0 100 140" fill="currentColor" aria-hidden="true">
+                <rect x="15" y="110" width="90" height="30"/>
+                <rect x="22" y="92" width="76" height="18"/><rect x="19" y="89" width="82" height="3"/>
+                <rect x="29" y="76" width="62" height="16"/><rect x="26" y="73" width="68" height="3"/>
+                <rect x="36" y="62" width="48" height="14"/><rect x="33" y="59" width="54" height="3"/>
+                <rect x="43" y="50" width="34" height="12"/><rect x="40" y="47" width="40" height="3"/>
+                <rect x="49" y="40" width="22" height="10"/>
+                <path d="M50 40Q60 20 70 40Z"/>
+                <ellipse cx="60" cy="16" rx="3" ry="5"/>
+              </svg>
+              <svg class="theme-switch__stars-container" viewBox="0 0 64 40" fill="currentColor">
+                <circle cx="8" cy="8" r="1.4"/><circle cx="22" cy="26" r="1"/><circle cx="48" cy="9" r="1.2"/>
+                <circle cx="56" cy="28" r="1.4"/><circle cx="40" cy="32" r="0.9"/>
+                <path d="M32 4L33.5 9L38.5 10.5L33.5 12L32 17L30.5 12L25.5 10.5L30.5 9Z"/>
+                <path d="M14 18L14.9 21L18 21.9L14.9 22.8L14 26L13.1 22.8L10 21.9L13.1 21Z"/>
+              </svg>
+              <div class="theme-switch__circle-container">
+                <div class="theme-switch__sun-moon-container">
+                  <div class="theme-switch__moon">
+                    <div class="theme-switch__spot"></div>
+                    <div class="theme-switch__spot"></div>
+                    <div class="theme-switch__spot"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </label>
+          <span id="inv-branch-label" class="text-xs font-semibold text-zinc-300">BLR</span>
+
+          <select id="inv-client" onchange="invLoadClient()"
+                  class="bg-zinc-800 border border-white/10 text-zinc-300 text-xs px-3 py-2 rounded-xl outline-none cursor-pointer"
+                  style="flex:1;min-width:180px"></select>
+          <button onclick="saveInvoiceEditor()"
+                  class="bg-emerald-600 hover:bg-emerald-700 px-4 py-2 rounded-xl text-xs font-semibold cursor-pointer flex items-center gap-2">
+            <i class="fa-solid fa-floppy-disk text-xs"></i> Save
+          </button>
+          <button onclick="closeInvoiceEditor()"
+                  class="bg-zinc-800 hover:bg-zinc-700 border border-white/10 px-3 py-2 rounded-xl text-xs cursor-pointer">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="inv-strip flex flex-wrap items-center gap-3 mb-2 text-xs text-zinc-400">
+          <label id="inv-lbl-cgst" class="flex items-center gap-1">CGST %
+            <input data-grp="co" id="inv-cgst" type="number" step="0.01" oninput="invUpdateRates()"
+                  class="bg-zinc-800 border border-white/10 rounded-lg px-2 py-1 w-16 text-zinc-200 outline-none"></label>
+          <label id="inv-lbl-sgst" class="flex items-center gap-1">SGST %
+            <input data-grp="co" id="inv-sgst" type="number" step="0.01" oninput="invUpdateRates()"
+                  class="bg-zinc-800 border border-white/10 rounded-lg px-2 py-1 w-16 text-zinc-200 outline-none"></label>
+          <label id="inv-lbl-igst" class="flex items-center gap-1" style="display:none">IGST %
+            <input data-grp="co" id="inv-igst" type="number" step="0.01" oninput="invUpdateRates()"
+                  class="bg-zinc-800 border border-white/10 rounded-lg px-2 py-1 w-16 text-zinc-200 outline-none"></label>
+          <label class="flex items-center gap-1">Invoice prefix
+            <input data-grp="co" id="inv-prefix" type="text" maxlength="14"
+                  class="bg-zinc-800 border border-white/10 rounded-lg px-2 py-1 w-28 text-zinc-200 outline-none"></label>
+        </div>
+        <div id="inv-hint" class="text-zinc-500 mb-3" style="font-size:11px"></div>
+
+        <!-- ═══ BLR ═══ -->
+        <div class="inv-paper" id="inv-paper-blr">
+
+          <div style="text-align:center;font-weight:700;font-size:10px">INVOICE</div>
+          <input data-f="legal" data-grp="co" class="inv-in" style="text-align:center;font-size:26px" placeholder="S L EXPRESS">
+          <input data-f="addr" data-grp="co" class="inv-in" style="text-align:center;font-size:11px" placeholder="Office address">
+          <div style="border-bottom:2px solid #000;margin:6px 0 14px"></div>
+
+          <div style="display:flex;justify-content:space-between;gap:12px">
+            <div style="flex:1">
+              <div>TO,</div>
+              <div data-f="to-name" style="font-weight:700;margin:2px 0"></div>
+              <textarea data-f="to-addr" data-grp="cl" class="inv-in" rows="3" placeholder="Billing address"></textarea>
+            </div>
+            <div style="width:210px;border:1px solid #000;align-self:flex-start">
+              <div style="padding:2px 6px;border-bottom:1px solid #000;font-weight:700">DATE: <span style="font-weight:400;color:#777">Auto</span></div>
+              <div style="padding:2px 6px;font-weight:700">INVOICE NO : <span style="font-weight:400;color:#777">Auto</span></div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:6px;margin:14px 0 3px;font-weight:700">
+            <span style="white-space:nowrap">GST NO- (receiver's)</span>
+            <input data-f="to-gstin" data-grp="cl" class="inv-in" style="width:230px" maxlength="15">
+          </div>
+
+          <table class="inv-t">
+            <colgroup><col style="width:6%"><col style="width:10%"><col style="width:12%"><col style="width:24%"><col style="width:19%"><col style="width:8%"><col style="width:9%"><col style="width:12%"></colgroup>
+            <thead><tr><th>S/NO</th><th>DATE</th><th>AWB NO</th><th>CONSIGNEE</th><th>DESTINATION</th><th>QTY</th><th>WEIGHT</th><th>AMOUNT</th></tr></thead>
+            <tbody id="inv-rows"></tbody>
+          </table>
+
+          <div style="display:grid;grid-template-columns:57% 43%;border:1px solid #000;border-top:0">
+            <div style="border-right:1px solid #000">
+              <div style="padding:4px 10px;border-bottom:1px solid #000">
+                <div class="inv-l"><span>GSTIN-</span><input data-f="gstin" data-grp="co" class="inv-in" maxlength="15"></div>
+                <div class="inv-l"><span>PAN NO-</span><input data-f="pan" data-grp="co" class="inv-in" maxlength="10"></div>
+                <div class="inv-l"><span>SAC CODE</span><input data-f="sac" data-grp="co" class="inv-in"></div>
+              </div>
+              <div style="padding:4px 10px">
+                <div class="inv-l"><span>BANK DETAILS -</span><input data-f="bank" data-grp="co" class="inv-in"></div>
+                <div class="inv-l"><span>BRANCH:</span><input data-f="bbranch" data-grp="co" class="inv-in"></div>
+                <div class="inv-l"><span>A/C NO -</span><input data-f="acc" data-grp="co" class="inv-in"></div>
+                <div class="inv-l"><span>IFSC CODE :</span><input data-f="ifsc" data-grp="co" class="inv-in" maxlength="11"></div>
+              </div>
+            </div>
+            <div>
+              <div class="inv-r"><span>SUB TOTAL</span><span>0</span></div>
+              <div class="inv-r"><span id="inv-cgst-l">CGST @ 9%</span><span></span></div>
+              <div class="inv-r"><span id="inv-sgst-l">SGST @ 9%</span><span></span></div>
+              <div class="inv-r"><span>TOTAL AMOUNT</span><span></span></div>
+            </div>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;margin-top:14px;font-size:10px">
+            <span>SUBJECT TO BANGALORE JURISDICTION</span>
+            <span>AUTHORISED SIGNATURE</span>
+          </div>
+        </div>
+
+        <!-- ═══ CHENNAI ═══ -->
+        <div class="inv-paper inv-che" id="inv-paper-che" style="display:none">
+
+          <input data-f="legal" data-grp="co" class="inv-in" style="text-align:center;font-size:20px;font-weight:700" placeholder="SL EXPRESS">
+          <input data-f="addr" data-grp="co" class="inv-in" style="text-align:center" placeholder="Office address">
+          <div style="text-align:center">Tel: 044 28548686, Telefax : 28512435</div>
+          <div style="text-align:center">Web Track: www.slexpress.in , Email : slexpress15@gmail.com</div>
+          <div style="display:flex;justify-content:center;align-items:center;gap:6px;margin-top:2px">
+            <span style="white-space:nowrap">GST Tax no :</span>
+            <input data-f="gstin" data-grp="co" class="inv-in" style="width:170px" maxlength="15">
+            <span style="white-space:nowrap">, PAN No :</span>
+            <input data-f="pan" data-grp="co" class="inv-in" style="width:130px" maxlength="10">
+          </div>
+          <div style="border-bottom:2px solid #000;margin:8px 0 14px"></div>
+
+          <div style="display:flex;justify-content:space-between;gap:16px;font-size:12px">
+            <div style="flex:1">
+              <div class="inv-l"><b style="width:70px">Customer</b><span>:</span><span data-f="to-name" style="font-weight:700"></span></div>
+              <div class="inv-l"><b style="width:70px">GST No</b><span>:</span><input data-f="to-gstin" data-grp="cl" class="inv-in" style="max-width:200px" maxlength="15"></div>
+              <div class="inv-l" style="align-items:flex-start"><b style="width:70px">Address</b><span>:</span><textarea data-f="to-addr" data-grp="cl" class="inv-in" rows="2" placeholder="Billing address"></textarea></div>
+            </div>
+            <div style="width:230px">
+              <div>Bill No. <span style="color:#777">prefix + Auto</span></div>
+              <div style="margin-top:4px">Invoice Date : <span style="color:#777">Auto</span></div>
+            </div>
+          </div>
+
+          <div style="text-align:center;font-weight:700;margin:14px 0 8px">Bill Period From <span style="font-weight:400;color:#777">Auto</span> To <span style="font-weight:400;color:#777">Auto</span></div>
+
+          <table class="inv-t">
+            <colgroup><col style="width:7%"><col style="width:16%"><col style="width:15%"><col style="width:17%"><col style="width:21%"><col style="width:10%"><col style="width:14%"></colgroup>
+            <thead><tr><th>Sno</th><th>A.W.B.No</th><th>Booked Date</th><th>Booked at</th><th>Delivered at</th><th>Weight</th><th>Amount</th></tr></thead>
+            <tbody>
+              <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td><td></td><td>Basic Amount</td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td><td></td><td id="inv-igst-l">IGST Tax(18%)</td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td><td></td><td>Total Amount</td><td></td><td></td></tr>
+            </tbody>
+          </table>
+
+          <div style="margin-top:12px"><b>Amount in Words :</b> <span style="color:#777">Auto</span></div>
+          <div style="margin-top:10px;font-size:11px">Note : Payments should be made by crossed cheque/Demand Draft payable to S.L.Express Only</div>
+          <div style="font-size:11px"><b>Terms of Payment :</b></div>
+          <ul style="font-size:11px;margin:2px 0 0 28px;list-style:disc">
+            <li>Cash : Payment should be made directly to Cashier in our office and to no one else.</li>
+            <li>Company's printed official receipt duly signed by the cashier must always be obtained against payment made in cash as it will be considered as the only valid document.</li>
+            <li>Cheques : All Cheques or Demand Drafts in payment of bill should be drawn in favour of S.L.EXPRESS on local banks only &amp; shouldbe crossed "A/c. Payee only"</li>
+            <li>Receipts : Our official receipt from duly signed by our cashier only will be considered valid.</li>
+            <li>Outstanding :We reserver the right to charge interest at the rate of 24% per annum on overdue bills</li>
+          </ul>
+          <div style="text-align:right;font-size:11px;margin-top:6px">for S.L. Express</div>
+          <div style="text-align:right;font-size:11px;margin-top:26px">Authorized Signatory</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Admin Login -->
+  <div id="login-modal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[200] p-4">
+    <div id="login-form" class="login-card">
+      <button onclick="closeAdminLogin()" class="modal-close">&times;</button>
+      <p class="modal-eyebrow">Admin</p>
+      <h3 class="modal-title">Admin Login</h3>
+      <p class="modal-sub"></p>
+
+      <div class="modal-input-wrap">
+        <label for="admin-user">Username</label>
+        <input id="admin-user" type="text" autocomplete="username" class="pill-input" placeholder="Username">
+      </div>
+      <div class="modal-input-wrap">
+        <label for="admin-pass">Password</label>
+        <input id="admin-pass" type="password" autocomplete="off" class="pill-input" placeholder="Password">
+      </div>
+
+      <button onclick="loginAdmin()" class="modal-submit">Login</button>
+
+      <p id="login-msg" class="login-msg hidden"></p>
+      <p id="login-attempts" class="login-attempts hidden">Attempts remaining: <span id="attempts-count">3</span></p>
+
+      <button onclick="showForgotPassword()" class="modal-back login-link-btn">Forgot Password?</button>
+    </div>
+
+    <div id="forgot-password-form" class="hidden login-card">
+      <button onclick="closeAdminLogin()" class="modal-close">&times;</button>
+      <button onclick="backToLogin()" class="modal-back login-back-arrow">&larr;</button>
+      <p class="modal-eyebrow">Reset Access</p>
+      <h3 class="modal-title">Reset Password</h3>
+      <p class="modal-sub">Enter your username to receive password reset instructions.</p>
+
+      <div class="modal-input-wrap">
+        <label for="reset-username">Username</label>
+        <input id="reset-username" type="text" autocomplete="off" class="pill-input" placeholder="Username">
+      </div>
+
+      <button onclick="sendPasswordReset()" class="modal-submit">Send Reset Link</button>
+
+      <p id="reset-msg" class="login-msg hidden"></p>
+
+      <button onclick="backToLogin()" class="modal-back login-link-btn">Back to Login</button>
+    </div>
+  </div>
+
+
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/ScrollTrigger.min.js"></script>
+
+  <!-- Keep scrolling reminder -->
+  <div id="keep-scrolling">
+    <span>Keep scrolling</span>
+    <svg width="16" height="20" viewBox="0 0 16 20" fill="none">
+      <path d="M8 1v14M2 9l6 6 6-6" stroke="rgba(244,235,208,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
